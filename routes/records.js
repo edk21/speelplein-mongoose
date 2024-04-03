@@ -65,10 +65,10 @@ router.post('/addRecord', async (req, res) => {
 // Get all records
 router.get('/getRecords', async (req, res) => {
     try {
-        const children = await Child.find()
-        .then((childrens) => {
-            console.log('Children:', childrens);
-            res.status(200).json({children: childrens});
+        await Child.find()
+        .then((children) => {
+            console.log('Children:', children);
+            res.status(200).json({children: children});
         })
         .catch((error) => {
             console.log('Error:', error)
